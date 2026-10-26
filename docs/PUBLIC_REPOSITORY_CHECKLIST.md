@@ -8,13 +8,13 @@ The supplied `git push` output shows that Git uploaded and GitHub processed the 
 
 GitHub identified five secret findings in historical commits of the same file. The log identifies the credential types and locations, but does not print the key values:
 
-| Finding | Location in `src/main/resources/application.properties` | Commits named by GitHub |
-| --- | --- | --- |
-| Groq API Key 1 | Line 26 in the first two commits; line 27 in the next three | `b92d692140d83db341778f96592c56406764d41c`, `06c3bf4d42dca0e5c8fe17468288e8ce9ec987f6`, `89d519f96a0817d85cb4670bb2d1a52480d994eb`, `2682ff49ce84e62a4fb0cd990aa6040e6520f5c9`, `785bdfb0a54aadbb5010ab03e52368e96533514d` |
-| Groq API Key 2 | Line 27 | `6bb00372c6fa7b70b43c62dc512ef3dde30fec65`, `572cbba7d759cb5e93a708870f9451d5e7fb37c9`, `8b8cc03eb174d759215d42cc62b31e4f7be48531`, `06f74d7ab4f407db20da32fe3c20e4439da2a561`, `d0872823b520fa2fc2133d71f1d2794796dabd1a` |
-| Groq API Key 3 | Line 27 | `c4930accb9e89dfd8f08056fe422cedc329b4a51` |
-| OpenRouter API Key 1 | Line 45 | `c4930accb9e89dfd8f08056fe422cedc329b4a51`, `89d519f96a0817d85cb4670bb2d1a52480d994eb`, `6bb00372c6fa7b70b43c62dc512ef3dde30fec65`, `572cbba7d759cb5e93a708870f9451d5e7fb37c9`, `d0872823b520fa2fc2133d71f1d2794796dabd1a` |
-| OpenRouter API Key 2 | Line 46 | `2682ff49ce84e62a4fb0cd990aa6040e6520f5c9` |
+| Finding              | Location in `src/main/resources/application.properties`     | Commits named by GitHub                                                                                                                                                                                                    |
+|----------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Groq API Key 1       | Line 26 in the first two commits; line 27 in the next three | `b92d692140d83db341778f96592c56406764d41c`, `06c3bf4d42dca0e5c8fe17468288e8ce9ec987f6`, `89d519f96a0817d85cb4670bb2d1a52480d994eb`, `2682ff49ce84e62a4fb0cd990aa6040e6520f5c9`, `785bdfb0a54aadbb5010ab03e52368e96533514d` |
+| Groq API Key 2       | Line 27                                                     | `6bb00372c6fa7b70b43c62dc512ef3dde30fec65`, `572cbba7d759cb5e93a708870f9451d5e7fb37c9`, `8b8cc03eb174d759215d42cc62b31e4f7be48531`, `06f74d7ab4f407db20da32fe3c20e4439da2a561`, `d0872823b520fa2fc2133d71f1d2794796dabd1a` |
+| Groq API Key 3       | Line 27                                                     | `c4930accb9e89dfd8f08056fe422cedc329b4a51`                                                                                                                                                                                 |
+| OpenRouter API Key 1 | Line 45                                                     | `c4930accb9e89dfd8f08056fe422cedc329b4a51`, `89d519f96a0817d85cb4670bb2d1a52480d994eb`, `6bb00372c6fa7b70b43c62dc512ef3dde30fec65`, `572cbba7d759cb5e93a708870f9451d5e7fb37c9`, `d0872823b520fa2fc2133d71f1d2794796dabd1a` |
+| OpenRouter API Key 2 | Line 46                                                     | `2682ff49ce84e62a4fb0cd990aa6040e6520f5c9`                                                                                                                                                                                 |
 
 GitHub offered unblock links for the five findings. Those links would permit this push without removing the historical credentials; they are not remediation for exposed keys. Removing credentials only from the latest checkout, or adding the file to `.gitignore`, will not clear a finding in an earlier commit.
 
