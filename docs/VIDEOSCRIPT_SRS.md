@@ -1,79 +1,79 @@
-# ĐẶC TẢ YÊU CẦU PHẦN MỀM - VIDEOSCRIPT
+# VIDEOSCRIPT SOFTWARE REQUIREMENTS SPECIFICATION
 
-## A. Giới thiệu chung
+## A. Overview
 
-### 1. Tên phần mềm
+### 1. Product name
 
-VideoScript (AI Short Video Creator) – Nền tảng tạo video ngắn theo xu hướng bằng trí tuệ nhân tạo
+VideoScript (AI Short Video Creator) — a platform for creating trend-driven short videos with artificial intelligence.
 
-### 2. Mục tiêu
+### 2. Goals
 
-- Phát triển một ứng dụng hỗ trợ người dùng tạo ra video ngắn dạng TikTok, YouTube Shorts từ nội dung theo xu hướng hiện tại
-- Sử dụng các công nghệ AI như LLM, TTS, và xử lý video tự động.
-- Phần mềm hướng đến mục tiêu hỗ trợ sáng tạo nội dung dễ dàng hơn cho người dùng phổ thông, sinh viên, người yêu thích multimedia.
+- Help users create short TikTok and YouTube Shorts videos about current topics.
+- Use AI technologies such as large language models (LLMs), text-to-speech (TTS), and automated video processing.
+- Make content creation easier for general users, students, and multimedia enthusiasts.
 
-### 3. Phạm vi ứng dụng
+### 3. Target users
 
-- Người dùng cần tạo video ngắn học thuật, truyền thông, giải trí, lan tỏa kiến thức.
-- Nhóm sinh viên cần tạo sản phẩm minh họa cho các chiến dịch truyền thông.
-- Người học muốn thực hành với các công nghệ AI đa phương tiện hiện đại.
+- People creating short educational, promotional, entertainment, or knowledge-sharing videos.
+- Student teams producing examples for communications campaigns.
+- Learners experimenting with multimedia AI technologies.
 
-## B. Chức năng chính (MVP)
+## B. Core MVP features
 
-| ID | Chức năng                   | Mô tả                                                               |
-|----|-----------------------------|---------------------------------------------------------------------|
-| F1 | Gợi ý chủ đề theo xu hướng  | Gợi ý nội dung đang được quan tâm thông qua từ khóa và API trend    |
-| F2 | Sinh kịch bản video tự động | Tạo nội dung mô tả theo cấu trúc hấp dẫn, sinh động                 |
-| F3 | Tạo giọng đọc AI            | Chuyển văn bản thành giọng nói qua công nghệ Text-to-Speech         |
-| F4 | Tạo video tự động           | Ghép ảnh nền, giọng đọc và phụ đề thành một video hoàn chỉnh        |
-| F5 | Chỉnh sửa cơ bản            | Cho phép người dùng thêm hiệu ứng chữ, sticker, nhạc nền            |
-| F6 | Xuất video                  | Tải video dưới định dạng .mp4 để chia sẻ hoặc sử dụng trong bài học |
-| F7 | Quản lý video đã tạo        | Lưu trữ và xem lại các video từng được tạo qua hệ thống             |
+| ID | Feature                       | Description                                                                |
+|----|-------------------------------|----------------------------------------------------------------------------|
+| F1 | Trend-based topic suggestions | Suggest topics of current interest from keywords and a trends API.         |
+| F2 | Automatic script generation   | Produce an engaging, structured video script.                              |
+| F3 | AI voiceover                  | Convert text to speech using TTS.                                          |
+| F4 | Automatic video creation      | Combine background images, voiceover, and subtitles into a complete video. |
+| F5 | Basic editing                 | Let users add text effects, stickers, and background music.                |
+| F6 | Video export                  | Download an MP4 video for sharing or use in a lesson.                      |
+| F7 | Created video management      | Store and revisit previously created videos.                               |
 
-## C. Yêu cầu phi chức năng
+## C. Non-functional requirements
 
-- Hiệu năng: Video ngắn (dưới 1 phút) được xử lý trong vòng 60 giây
-- Khả năng mở rộng: Dễ dàng tích hợp các API mới, thêm chức năng nâng cao
-- Giao diện: Giao diện đơn giản, thân thiện với người mới
-- Bảo mật: Tài khoản người dùng được xác thực và thông tin được mã hóa
-- Tài liệu kỹ thuật: Có tài liệu mô tả từng module để dễ bảo trì và nâng cấp
+- Performance: process a short video (under one minute long) within 60 seconds.
+- Extensibility: make it easy to integrate new APIs and advanced features.
+- Interface: keep the UI simple and approachable for new users.
+- Security: authenticate users and encrypt their information.
+- Technical documentation: describe each module to support maintenance and further development.
 
-## D. Luồng hoạt động chính
+## D. Main workflow
 
-1. Nhập từ khóa chủ đề
-2. Sinh kịch bản từ AI
-3. TTS tạo giọng đọc
-4. Chọn hình nền phù hợp
-5. Chèn phụ đề tự động
-6. Xem trước và tải video
+1. Enter a topic keyword.
+2. Generate a script with AI.
+3. Generate a voiceover with TTS.
+4. Select a suitable background image.
+5. Add automatic subtitles.
+6. Preview and download the video.
 
-## E. Giao diện người dùng đề xuất
+## E. Proposed user interface
 
-- Trang chủ: nhập từ khóa & xem đề xuất xu hướng
-- Trang soạn kịch bản & chọn giọng đọc
-- Trang xem trước video & tùy chỉnh đơn giản
-- Dashboard video đã tạo
+- Home page: enter keywords and view trend suggestions.
+- Script editor and voice selection page.
+- Video preview and basic customization page.
+- Dashboard of created videos.
 
-## F. Yêu cầu công nghệ
+## F. Technology requirements
 
-- Frontend: ReactJS / Next.js + TailwindCSS (đã có).
-- Backend: Microservices - Java Spring + Python (chỉ những service liên quan tới AI).
-- AI NLP: (hãy đề xuất các mô hình bên thứ 3 miễn phí)
-- TTS: (hãy đề xuất các mô hình bên thứ 3 miễn phí)
-- Video Processing: (hãy đề xuất)
-- Database: PostgreSQL và MongoDB (tùy service phù hợp)
-- Lưu trữ: Cloudinary
+- Frontend: ReactJS / Next.js + Tailwind CSS (described as already available in the source SRS).
+- Backend: Java Spring and Python microservices (Python only for AI-related services).
+- AI NLP: propose free third-party models.
+- TTS: propose free third-party models.
+- Video processing: propose a solution.
+- Database: PostgreSQL and MongoDB, assigned to services as appropriate.
+- Storage: Cloudinary.
 
-## G. Phân công nhóm đề xuất
+## G. Proposed team responsibilities
 
-- Dev Frontend: Xây dựng giao diện & chức năng người dùng (đã có)
-- Dev Backend: Viết API, điều phối xử lý AI (cần tập trung)
-- AI Integrator: Gắn kết LLM, TTS, video render (cần tập trung)
-- Test, viết tài liệu (đã có)
+- Frontend developer: build the UI and user-facing features (described as already available in the source SRS).
+- Backend developer: implement APIs and coordinate AI processing (primary focus).
+- AI integrator: connect LLM, TTS, and video rendering services (primary focus).
+- Testing and documentation (described as already available in the source SRS).
 
-## H. Tiêu chí đánh giá
+## H. Evaluation criteria
 
-- Giao diện dễ dùng
-- Có thể tạo được video từ nội dung do AI sinh
-- Tích hợp TTS và xử lý video cơ bản
-- Tài liệu rõ ràng, có sơ đồ hệ thống
+- An easy-to-use interface.
+- Video creation from AI-generated content.
+- TTS integration and basic video processing.
+- Clear technical documentation and a system diagram.
